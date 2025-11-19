@@ -1003,130 +1003,19 @@ document.querySelector('.header').style.transform = 'translateY(-20px)';
 document.querySelector('.header').style.transition = 'opacity 0.5s ease, transform 0.5s ease';
 
 // ========================================
-// LEARNING & GROWTH OUTCOMES
-// Animated Vertical Bar Charts
+// LEARNING & GROWTH OUTCOMES - OLD CODE (DISABLED)
+// Now using learning-growth.js instead
 // ========================================
-
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Intersection Observer for cards
-    const cardObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const delay = entry.target.dataset.delay || 0;
-                
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                    
-                    // Animate bars after card becomes visible
-                    setTimeout(() => {
-                        animateBars(entry.target);
-                    }, 300);
-                }, delay);
-                
-                cardObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.3,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    // Observe all outcome cards
-    document.querySelectorAll('.outcome-card').forEach(card => {
-        cardObserver.observe(card);
-    });
-});
-
-// Animate bars function
-function animateBars(card) {
-    const bars = card.querySelectorAll('.bar');
-    const growthIndicator = card.querySelector('.growth-indicator');
-    
-    bars.forEach((bar, index) => {
-        const targetValue = parseFloat(bar.dataset.value);
-        
-        // Start animation with slight delay between bars
-        setTimeout(() => {
-            bar.style.height = targetValue + '%';
-            bar.classList.add('animated');
-            
-            // Animate the number counting up
-            animateCounter(bar, targetValue);
-        }, index * 400);
-    });
-    
-    // Show growth indicator after bars animate
-    setTimeout(() => {
-        if (growthIndicator) {
-            growthIndicator.classList.add('visible');
-        }
-    }, 2000);
-}
-
-// Counter animation function
-function animateCounter(bar, targetValue) {
-    const valueElement = bar.querySelector('.bar-value');
-    const duration = 2000; // 2 seconds
-    const startTime = performance.now();
-    
-    function updateCounter(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        // Easing function for smooth acceleration/deceleration
-        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-        
-        const currentValue = easeOutCubic * targetValue;
-        valueElement.textContent = currentValue.toFixed(1) + '%';
-        
-        if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-        } else {
-            // Ensure final value is exact
-            valueElement.textContent = targetValue.toFixed(1) + '%';
-        }
-    }
-    
-    requestAnimationFrame(updateCounter);
-}
-
-// Optional: Add hover effect to bars
-document.addEventListener('DOMContentLoaded', function() {
-    const bars = document.querySelectorAll('.bar');
-    
-    bars.forEach(bar => {
-        bar.addEventListener('mouseenter', function() {
-            this.style.transform = 'scaleX(1.1)';
-            this.style.transition = 'transform 0.3s ease';
-        });
-        
-        bar.addEventListener('mouseleave', function() {
-            this.style.transform = 'scaleX(1)';
-        });
-    });
-});
-
-// Optional: Parallax effect on scroll
-window.addEventListener('scroll', () => {
-    const section = document.querySelector('.learning-growth-section');
-    if (!section) return;
-
-    const rect = section.getBoundingClientRect();
-    const scrolled = window.pageYOffset;
-    
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-        const yPos = -(scrolled * 0.15);
-        section.style.backgroundPosition = `center ${yPos}px`;
-    }
-});
+// Code commented out - using new circular progress design
 
 
 // ========================================
-// TESTIMONIALS SECTION - Interactive Carousel
+// TESTIMONIALS SECTION - OLD CODE (DISABLED)
+// Now using testimonials.js instead
 // ========================================
+// Code commented out - using new modular testimonials system
 
-// Testimonial Data
+/* OLD CODE - DISABLED
 const testimonials = [
     {
         name: "Amen Divine Ikamba",
@@ -1369,5 +1258,6 @@ const testimonialText = document.querySelector('.testimonial-text');
 if (testimonialText) {
     testimonialText.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 }
+END OF OLD CODE */
 
 

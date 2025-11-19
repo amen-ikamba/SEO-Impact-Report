@@ -1,0 +1,628 @@
+/* ========================================
+   CURRICULUM & AI IN EDUCATION SECTIONS
+   Clean, professional design with official color palette
+   ======================================== */
+
+/* ========================================
+   CURRICULUM SECTION
+   ======================================== */
+
+.curriculum-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.curriculum-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #eb0029 50%, transparent 100%);
+}
+
+/* Header */
+.curriculum-header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.curriculum-header .header-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(229, 231, 231, 0.5);
+    border: 3px solid #115a7f;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.curriculum-header .section-title {
+    font-size: clamp(36px, 5vw, 48px);
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.curriculum-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #115a7f;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Content Layout */
+.curriculum-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Left Column - Text Content */
+.curriculum-text {
+    padding: 0 20px;
+}
+
+.curriculum-description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #4d4d4d;
+    margin-bottom: 40px;
+}
+
+/* Rating Cards */
+.curriculum-ratings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.curriculum-rating-card {
+    background: linear-gradient(135deg, #ffffff, #e5e7e7);
+    border-radius: 16px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 2px solid #e5e7e7;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.curriculum-rating-card:hover {
+    border-color: #eb0029;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(235, 0, 41, 0.2);
+}
+
+.curriculum-rating-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: #eb0029;
+    line-height: 1;
+    display: inline-block;
+}
+
+.curriculum-rating-scale {
+    font-size: 20px;
+    font-weight: 600;
+    color: #babcbf;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.curriculum-rating-stars {
+    margin: 15px 0;
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+.curriculum-star {
+    color: #e5e7e7;
+    transition: color 0.3s ease;
+}
+
+.curriculum-star.filled {
+    color: #eb0029;
+}
+
+.curriculum-star.partial {
+    background: linear-gradient(90deg, #eb0029 55%, #e5e7e7 55%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.curriculum-rating-card:hover .curriculum-star.filled {
+    color: #115a7f;
+}
+
+.curriculum-rating-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+/* Right Column - Image */
+.curriculum-image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.curriculum-image-container:hover {
+    transform: scale(1.02);
+}
+
+.curriculum-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.curriculum-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+    pointer-events: none;
+}
+
+/* ========================================
+   AI IN EDUCATION SECTION
+   ======================================== */
+
+.ai-education-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #e5e7e7 50%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+.ai-header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.ai-header .header-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(229, 231, 231, 0.5);
+    border: 3px solid #115a7f;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.ai-header .section-title {
+    font-size: clamp(36px, 5vw, 48px);
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.ai-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #115a7f;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Content Grid */
+.ai-content-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Left Column - Key Points */
+.ai-key-points {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-key-points::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #eb0029, #115a7f);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
+}
+
+.ai-key-points:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.ai-key-points:hover::before {
+    transform: scaleX(1);
+}
+
+.ai-section-label {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #eb0029;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.ai-points-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.ai-points-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ai-point-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding-left: 0;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
+}
+
+.ai-point-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ai-point-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #eb0029, #115a7f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-top: 2px;
+}
+
+.ai-point-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: #ffffff;
+    stroke-width: 2;
+}
+
+.ai-point-text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4d4d4d;
+}
+
+.ai-point-text strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+/* Right Column - Image */
+.ai-image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.ai-image-container:hover {
+    transform: scale(1.02);
+}
+
+.ai-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.ai-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+    pointer-events: none;
+}
+
+/* ========================================
+   COMMUNITY BUILDING SECTION
+   ======================================== */
+
+.community-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.community-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #115a7f 50%, transparent 100%);
+}
+
+/* Header */
+.community-header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.community-header .header-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(229, 231, 231, 0.5);
+    border: 3px solid #eb0029;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.community-header .section-title {
+    font-size: clamp(36px, 5vw, 48px);
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.community-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #eb0029;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Content Layout */
+.community-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Left Column - Image */
+.community-image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.community-image-container:hover {
+    transform: scale(1.02);
+}
+
+.community-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.community-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+    pointer-events: none;
+}
+
+/* Right Column - Text Content */
+.community-text {
+    padding: 0 20px;
+}
+
+.community-description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #4d4d4d;
+    margin-bottom: 35px;
+}
+
+.community-description p {
+    margin-bottom: 20px;
+}
+
+.community-description p:last-child {
+    margin-bottom: 0;
+}
+
+.community-highlight {
+    background: linear-gradient(135deg, #ffffff, #e5e7e7);
+    border-left: 4px solid #eb0029;
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.community-highlight:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(235, 0, 41, 0.15);
+}
+
+.community-highlight-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: #000000;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .curriculum-content,
+    .ai-content-grid,
+    .community-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .curriculum-content {
+        grid-template-columns: 1fr;
+    }
+
+    .curriculum-text {
+        order: 1;
+    }
+
+    .curriculum-image-container {
+        order: 2;
+    }
+
+    .ai-content-grid .ai-key-points {
+        order: 1;
+    }
+
+    .ai-content-grid .ai-image-container {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .curriculum-section,
+    .ai-education-section,
+    .community-section {
+        padding: 60px 0;
+    }
+
+    .curriculum-ratings {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .curriculum-text,
+    .community-text {
+        padding: 0 10px;
+    }
+
+    .ai-key-points {
+        padding: 30px 25px;
+    }
+
+    .curriculum-rating-value {
+        font-size: 42px;
+    }
+
+    .ai-points-title {
+        font-size: 24px;
+    }
+
+    .curriculum-description,
+    .community-description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .curriculum-header .section-title,
+    .ai-header .section-title,
+    .community-header .section-title {
+        font-size: 32px;
+    }
+
+    .curriculum-rating-card {
+        padding: 25px 20px;
+    }
+
+    .curriculum-rating-value {
+        font-size: 36px;
+    }
+
+    .ai-key-points {
+        padding: 25px 20px;
+    }
+
+    .ai-point-item {
+        margin-bottom: 20px;
+    }
+
+    .community-highlight {
+        padding: 20px 20px;
+    }
+
+    .community-highlight-text {
+        font-size: 15px;
+    }
+}

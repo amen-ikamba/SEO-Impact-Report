@@ -1,0 +1,337 @@
+/* ========================================
+   LEARNING & GROWTH SECTION - REDESIGNED
+   Circular Progress Indicators with Before/After Comparison
+   Using Official Color Palette:
+   Primary Red: #eb0029
+   Black: #000000
+   Dark Gray: #4d4d4d
+   Medium Gray: #babcbf
+   Light Gray: #e5e7e7
+   White: #ffffff
+   Dark Blue: #115a7f
+   Light Blue: #83b4df
+   ======================================== */
+
+.learning-growth-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #e5e7e7 50%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+.lg-header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.lg-header .header-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(229, 231, 231, 0.5); /* #e5e7e7 */
+    border: 3px solid #eb0029;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.lg-header .section-title {
+    font-size: clamp(36px, 5vw, 48px);
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.lg-header .section-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #eb0029;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.lg-description {
+    font-size: 16px;
+    color: #4d4d4d;
+    font-weight: 500;
+}
+
+/* Cards Grid */
+.lg-outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Card */
+.lg-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 35px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(30px);
+    position: relative;
+    overflow: hidden;
+}
+
+.lg-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #eb0029, #115a7f);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
+}
+
+.lg-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lg-card.visible::before {
+    transform: scaleX(1);
+}
+
+.lg-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header */
+.lg-card-header {
+    margin-bottom: 30px;
+}
+
+.lg-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #eb0029;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.lg-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.4;
+}
+
+/* Progress Comparison Layout */
+.lg-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.lg-before,
+.lg-after {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lg-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4d4d4d;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Circular Progress */
+.lg-circle-progress {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.lg-circle-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.lg-circle-bg {
+    fill: none;
+    stroke: #e5e7e7;
+    stroke-width: 10;
+}
+
+.lg-circle-fill {
+    fill: none;
+    stroke: #eb0029;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 314.159; /* 2 * PI * 50 */
+    stroke-dashoffset: 314.159;
+    transition: stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lg-circle-fill.lg-circle-good {
+    stroke: #115a7f; /* Use official dark blue for medium values */
+}
+
+.lg-circle-fill.lg-circle-success {
+    stroke: #115a7f; /* Use official dark blue for high values */
+}
+
+.lg-circle-fill.animated {
+    /* Animation will be applied via JavaScript */
+}
+
+.lg-circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.lg-percent-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.lg-percent-sign {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4d4d4d;
+}
+
+/* Arrow Container */
+.lg-arrow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.lg-arrow-container svg {
+    animation: arrowPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+.lg-growth-badge {
+    padding: 8px 16px;
+    background: #eb0029;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(235, 0, 41, 0.3);
+}
+
+.lg-growth-badge.lg-badge-blue {
+    background: #115a7f;
+    box-shadow: 0 4px 12px rgba(17, 90, 127, 0.3);
+}
+
+/* Note */
+.lg-note {
+    font-size: 13px;
+    color: #babcbf;
+    font-style: italic;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .lg-outcomes-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .learning-growth-section {
+        padding: 60px 0;
+    }
+
+    .lg-card {
+        padding: 30px 20px;
+    }
+
+    .lg-comparison {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .lg-arrow-container svg {
+        transform: rotate(90deg);
+    }
+
+    .lg-circle-progress {
+        width: 100px;
+        height: 100px;
+    }
+
+    .lg-percent-value {
+        font-size: 20px;
+    }
+
+    .lg-card-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lg-outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lg-circle-progress {
+        width: 90px;
+        height: 90px;
+    }
+
+    .lg-percent-value {
+        font-size: 18px;
+    }
+}

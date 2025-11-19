@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .bar-track {
+            width: 80px;
+            height: 300px;
+            background: #e5e7e7;
+            position: relative;
+        }
+        .bar {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(180deg, #ff1744 0%, #c4001f 100%);
+            transition: height 2s ease;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 10px;
+        }
+        .bar-value {
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bar Test</h1>
+    <div class="bar-track">
+        <div class="bar" data-value="95.2" style="height: 0%;">
+            <span class="bar-value">0%</span>
+        </div>
+    </div>
+    
+    <button onclick="testAnimate()">Animate</button>
+    
+    <script>
+        function testAnimate() {
+            const bar = document.querySelector('.bar');
+            const targetValue = parseFloat(bar.dataset.value);
+            console.log('Target value:', targetValue);
+            
+            bar.style.height = targetValue + '%';
+            console.log('Height set to:', bar.style.height);
+            
+            // Animate counter
+            const valueElement = bar.querySelector('.bar-value');
+            const duration = 2000;
+            const startTime = performance.now();
+            
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+                const currentValue = easeOutCubic * targetValue;
+                valueElement.textContent = currentValue.toFixed(1) + '%';
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    valueElement.textContent = targetValue.toFixed(1) + '%';
+                }
+            }
+            
+            requestAnimationFrame(updateCounter);
+        }
+        
+        // Auto-run after 1 second
+        setTimeout(testAnimate, 1000);
+    </script>
+</body>
+</html>
