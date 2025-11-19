@@ -22,4 +22,3 @@ This interactive web-based report highlights:
 ---
 
 © 2025 SEO Tech Developer. All rights reserved.
-# SEO-Impact-Report
