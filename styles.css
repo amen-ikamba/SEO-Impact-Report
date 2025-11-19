@@ -2253,26 +2253,90 @@ section.visible {
 
 /* Mission Section */
 .mission {
-    background: var(--color-white);
+    background: linear-gradient(135deg, #ffffff 0%, #e5e7e7 50%, #ffffff 100%);
     padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.mission-header .header-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(229, 231, 231, 0.5);
+    border: 3px solid #eb0029;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
 }
 
 .mission .section-title {
     font-size: clamp(36px, 5vw, 48px);
-    font-weight: 800;
-    color: #1a1a1a;
-    margin-bottom: 30px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
     text-align: center;
-    letter-spacing: -0.5px;
+}
+
+.mission-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #eb0029;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.mission-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mission-highlight-box {
+    background: linear-gradient(135deg, #eb0029, #115a7f);
+    border-radius: 20px;
+    padding: 40px 50px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 40px rgba(235, 0, 41, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-highlight-box::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 120px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1);
+    font-family: Georgia, serif;
+}
+
+.mission-quote {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .mission-text {
-    max-width: 900px;
-    margin: 0 auto;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.8;
     text-align: center;
-    color: var(--color-dark-gray);
+    color: #4d4d4d;
+    margin: 0;
 }
 
 /* VP Message Section */
