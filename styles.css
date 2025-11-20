@@ -2502,46 +2502,29 @@ section.visible {
     gap: 5px;
     margin: 15px 0;
     font-size: 32px;
+    letter-spacing: 3px;
 }
 
 .fya-star {
-    color: #ddd;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    color: #e5e7e7;
+    transition: color 0.3s ease;
     position: relative;
     display: inline-block;
 }
 
 .fya-star.filled {
-    color: #ffd700;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    animation: starGlow 0.6s ease forwards;
+    color: #eb0029;
 }
 
 .fya-star.partial {
-    background: linear-gradient(90deg, #ffd700 var(--fill-percent), #ddd var(--fill-percent));
+    background: linear-gradient(90deg, #eb0029 var(--fill-percent), #e5e7e7 var(--fill-percent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: none;
 }
 
-.fya-star:hover {
-    transform: scale(1.2) rotate(10deg);
-}
-
-@keyframes starGlow {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+.fya-rating-card:hover .fya-star.filled {
+    color: #115a7f;
 }
 
 .fya-stat-divider {
